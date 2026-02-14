@@ -143,6 +143,45 @@ class ViralVideoGenerator:
         print("🎬 VIRAL VIDEO AUTO-GENERATOR SYSTEM 🎬".center(60))
         print("="*60 + "\n")
     
+    def _find_imagemagick_path(self):
+        """ค้นหา ImageMagick binary path ในระบบ"""
+        import shutil
+        
+        # Try common paths
+        if os.name == 'nt':  # Windows
+            common_paths = [
+                "C:\\Program Files\\ImageMagick-7\\convert.exe",
+                "C:\\Program Files (x86)\\ImageMagick-7\\convert.exe",
+                "C:\\Program Files\\ImageMagick\\convert.exe",
+            ]
+            for path in common_paths:
+                if os.path.exists(path):
+                    return path
+        else:  # Linux/Mac
+            paths = ["/usr/bin/convert", "/usr/local/bin/convert"]
+            for path in paths:
+                if os.path.exists(path):
+                    return path
+        
+        # Try using 'which' or 'where' command
+        try:
+            if os.name == 'nt':
+                result = subprocess.run(['where', 'convert'], 
+                                      capture_output=True, 
+                                      text=True, 
+                                      timeout=2)
+            else:
+                result = subprocess.run(['which', 'convert'], 
+                                      capture_output=True, 
+                                      text=True, 
+                                      timeout=2)
+            if result.returncode == 0:
+                return result.stdout.strip().split('\n')[0]
+        except:
+            pass
+        
+        return None
+
     def initialize_components(self):
         """สร้าง instances ของทั้ง 4 components"""
         print("📦 INITIALIZATION PHASE\n")
@@ -176,9 +215,12 @@ class ViralVideoGenerator:
                     self.config.ENABLE_VISION = False
             
             # 4. VideoRenderer
-            imagemagick_path = None
-            if os.name != 'nt':  # Non-Windows
-                imagemagick_path = "/usr/bin/convert"  # Linux standard path
+            imagemagick_path = self._find_imagemagick_path()
+            if imagemagick_path:
+                print(f"✅ ImageMagick found at: {imagemagick_path}\n")
+            else:
+                print("⚠️  ImageMagick not found - text rendering may fail")
+                print("   Install from: https://imagemagick.org/script/download.php or brew install imagemagick\n")
             
             self.video_renderer = VideoRenderer(
                 imagemagick_path=imagemagick_path,
