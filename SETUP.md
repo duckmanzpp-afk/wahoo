@@ -270,6 +270,30 @@ class Config:
 pip install faster-whisper
 ```
 
+### "ImageMagick not found" or "creation of None failed"
+This error occurs when rendering videos with text. You need to install ImageMagick:
+
+**Windows:**
+```bash
+# Option 1: Using Chocolatey
+choco install imagemagick
+
+# Option 2: Download installer from https://imagemagick.org/script/download.php
+# Then run the .exe installer
+```
+
+**macOS:**
+```bash
+brew install imagemagick
+```
+
+**Linux:**
+```bash
+sudo apt-get install imagemagick
+```
+
+After installing, restart your terminal and try again.
+
 ### "No such file or directory: 'ffmpeg'"
 **Windows:** 
 ```bash
