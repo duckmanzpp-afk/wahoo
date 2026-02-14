@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
 import os
 from typing import List, Dict, Tuple, Optional
@@ -26,6 +27,12 @@ try:
         change_settings({"FFMPEG_BINARY": FFMPEG_PATH})
 except ImportError:
     def change_settings(d): pass  # Dummy function
+=======
+import os
+from typing import List, Dict, Tuple, Optional
+from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip, vfx
+from moviepy.config import change_settings
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
 
 class VideoRenderer:
     """Component 4: Video Rendering Engine (MoviePy)
@@ -217,6 +224,7 @@ class VideoRenderer:
         print(f"   ⏳ Rendering... (อาจใช้เวลา)")
         try:
             final_video.write_videofile(
+<<<<<<< HEAD
     output_name,
     fps=fps,
     codec=codec,
@@ -225,6 +233,18 @@ class VideoRenderer:
 )
 
 
+=======
+                output_name,
+                fps=fps,
+                codec=codec,
+                audio_codec="aac",
+                preset=preset,
+                temp_audiofile="temp-audio.m4a",
+                remove_temp=True,
+                verbose=False,
+                logger=None  # ซ่อน logging ของ MoviePy
+            )
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
             
             print(f"   ✅ Render Complete!")
             return output_name
@@ -329,7 +349,12 @@ class VideoRenderer:
                 preset="fast",
                 temp_audiofile="temp-audio-vertical.m4a",
                 remove_temp=True,
+<<<<<<< HEAD
                 verbose=False
+=======
+                verbose=False,
+                logger=None
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
             )
             
             print(f"   ✅ 9:16 Render Complete!")

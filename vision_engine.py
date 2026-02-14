@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
+=======
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
 import cv2
 import numpy as np
 from typing import Tuple, Optional, List

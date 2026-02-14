@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
+=======
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
 """
 🚀 QUICK START - YouTube to Viral Video (Auto-Device)
 ใช้ได้แบบสั้นๆ ปล่อยให้ระบบเลือก CPU/GPU อัตโนมัติ
@@ -8,6 +11,7 @@
 import sys
 import os
 
+<<<<<<< HEAD
 # Fix Windows console encoding
 if sys.platform == 'win32':
     try:
@@ -17,6 +21,8 @@ if sys.platform == 'win32':
     except:
         pass
 
+=======
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
 def detect_best_device():
     """เลือก device ที่ดีที่สุดอัตโนมัติ"""
     try:
@@ -85,4 +91,7 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+<<<<<<< HEAD
 
+=======
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)

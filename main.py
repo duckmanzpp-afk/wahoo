@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
+=======
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
 import os
 import time
 import torch

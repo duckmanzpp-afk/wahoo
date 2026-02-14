@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
 
 import os
@@ -19,6 +20,8 @@ FFMPEG_PATH = r"C:\ffmpeg\bin\ffmpeg.exe"
 if os.path.exists(FFMPEG_PATH):
     os.environ['FFMPEG_BINARY'] = FFMPEG_PATH
 
+=======
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
 """
 =========================================
 🎬 VIRAL VIDEO AUTO-GENERATOR SYSTEM 🎬
@@ -35,6 +38,7 @@ Workflow: Test.mp4 → Audio Extract → Transcribe → Analyze → Vision → R
 BONUS: Support YouTube URLs - Auto-download & process!
 """
 
+<<<<<<< HEAD
 import argparse
 import json
 import subprocess
@@ -43,6 +47,17 @@ from urllib.parse import urlparse
 
 from moviepy_compat import VideoFileClip
 
+=======
+import os
+import time
+import argparse
+import json
+import subprocess
+import sys
+from pathlib import Path
+from urllib.parse import urlparse
+
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
 # Import components
 from audio_engine import AudioEngine
 from content_intelligence import ContentIntelligence
