@@ -105,14 +105,7 @@ def download_youtube_video(youtube_url: str, output_file: str = "youtube_downloa
         
         if os.path.exists(output_file):
             file_size_mb = os.path.getsize(output_file) / (1024 * 1024)
-            file_duration_info = ""
-            try:
-                import mediainfo
-                file_duration_info = " (ตรวจสอบระยะเวลา)"
-            except:
-                pass
-            
-            print(f"   ✅ ดาวน์โหลดสำเร็จ ({file_size_mb:.1f} MB){file_duration_info}")
+            print(f"   ✅ ดาวน์โหลดสำเร็จ ({file_size_mb:.1f} MB)")
             return output_file
         else:
             print(f"   ❌ ไฟล์ไม่ถูกสร้าง")
