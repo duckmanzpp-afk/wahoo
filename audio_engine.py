@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# -*- coding: utf-8 -*-
+=======
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
+>>>>>>> SIJN
 import os
 import subprocess
 import glob
@@ -121,7 +128,15 @@ class AudioEngine:
         """
         # ลำดับที่ 1: Fast path
         common_paths = [
+<<<<<<< HEAD
             r"C:\Webpedpok\ffmpeg-2026-02-09-git-9bfa1635ae-essentials_build\bin\ffmpeg.exe",
+=======
+<<<<<<< HEAD
+            r"C:\ffmpeg\bin\ffmpeg.exe",
+=======
+            r"C:\Webpedpok\ffmpeg-2026-02-09-git-9bfa1635ae-essentials_build\bin\ffmpeg.exe",
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
+>>>>>>> SIJN
         ]
         
         for path in common_paths:

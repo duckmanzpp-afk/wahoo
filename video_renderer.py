@@ -1,7 +1,44 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# -*- coding: utf-8 -*-
+import os
+from typing import List, Dict, Tuple, Optional
+
+# Set FFmpeg path
+FFMPEG_PATH = r"C:\ffmpeg\bin\ffmpeg.exe"
+if os.path.exists(FFMPEG_PATH):
+    os.environ['FFMPEG_BINARY'] = FFMPEG_PATH
+
+# Suppress imageio ffmpeg download
+import imageio
+imageio.plugins.ffmpeg.FFMPEG_BINARY = FFMPEG_PATH
+
+try:
+    from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip, vfx
+except (ImportError, RuntimeError):
+    # Fallback for moviepy 2.x
+    from moviepy.video.io.VideoFileClip import VideoFileClip
+    from moviepy.video.VideoClip import TextClip
+    from moviepy.video.compositing.CompositeVideoClip import CompositeVideoClip
+    import moviepy.video.fx as vfx
+
+try:
+    from moviepy.config import change_settings
+    if os.path.exists(FFMPEG_PATH):
+        change_settings({"FFMPEG_BINARY": FFMPEG_PATH})
+except ImportError:
+    def change_settings(d): pass  # Dummy function
+=======
+>>>>>>> SIJN
 import os
 from typing import List, Dict, Tuple, Optional
 from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip, vfx
 from moviepy.config import change_settings
+<<<<<<< HEAD
+=======
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
+>>>>>>> SIJN
 
 class VideoRenderer:
     """Component 4: Video Rendering Engine (MoviePy)
@@ -193,6 +230,19 @@ class VideoRenderer:
         print(f"   ⏳ Rendering... (อาจใช้เวลา)")
         try:
             final_video.write_videofile(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    output_name,
+    fps=fps,
+    codec=codec,
+    audio_codec="aac",
+    preset=preset
+)
+
+
+=======
+>>>>>>> SIJN
                 output_name,
                 fps=fps,
                 codec=codec,
@@ -203,6 +253,10 @@ class VideoRenderer:
                 verbose=False,
                 logger=None  # ซ่อน logging ของ MoviePy
             )
+<<<<<<< HEAD
+=======
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
+>>>>>>> SIJN
             
             print(f"   ✅ Render Complete!")
             return output_name
@@ -307,8 +361,17 @@ class VideoRenderer:
                 preset="fast",
                 temp_audiofile="temp-audio-vertical.m4a",
                 remove_temp=True,
+<<<<<<< HEAD
                 verbose=False,
                 logger=None
+=======
+<<<<<<< HEAD
+                verbose=False
+=======
+                verbose=False,
+                logger=None
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
+>>>>>>> SIJN
             )
             
             print(f"   ✅ 9:16 Render Complete!")

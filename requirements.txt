@@ -2,7 +2,16 @@
 # Install with: pip install -r requirements.txt
 
 # Core ML/AI
+<<<<<<< HEAD
 torch>=2.0.0
+=======
+<<<<<<< HEAD
+torch==2.10.0
+torchvision==0.15.1
+=======
+torch>=2.0.0
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
+>>>>>>> SIJN
 torchaudio>=2.0.0
 faster-whisper>=0.9.0
 openai>=1.0.0

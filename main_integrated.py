@@ -1,4 +1,30 @@
 #!/usr/bin/env python3
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# -*- coding: utf-8 -*-
+
+import os
+import sys
+import time
+
+# Fix Windows console encoding for Thai characters and emojis
+if sys.platform == 'win32':
+    try:
+        import codecs
+        sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
+        sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer, 'strict')
+    except:
+        pass
+
+# Configure FFmpeg path
+FFMPEG_PATH = r"C:\ffmpeg\bin\ffmpeg.exe"
+if os.path.exists(FFMPEG_PATH):
+    os.environ['FFMPEG_BINARY'] = FFMPEG_PATH
+
+=======
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
+>>>>>>> SIJN
 """
 =========================================
 🎬 VIRAL VIDEO AUTO-GENERATOR SYSTEM 🎬
@@ -15,6 +41,19 @@ Workflow: Test.mp4 → Audio Extract → Transcribe → Analyze → Vision → R
 BONUS: Support YouTube URLs - Auto-download & process!
 """
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import argparse
+import json
+import subprocess
+from pathlib import Path
+from urllib.parse import urlparse
+
+from moviepy_compat import VideoFileClip
+
+=======
+>>>>>>> SIJN
 import os
 import time
 import argparse
@@ -24,6 +63,10 @@ import sys
 from pathlib import Path
 from urllib.parse import urlparse
 
+<<<<<<< HEAD
+=======
+>>>>>>> aa72dfb (Initial project setup: WebPedPok YouTube video analysis and content intelligence system)
+>>>>>>> SIJN
 # Import components
 from audio_engine import AudioEngine
 from content_intelligence import ContentIntelligence
